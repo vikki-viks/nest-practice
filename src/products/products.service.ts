@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreateProductDto } from './dto/create-product.dto';
 
 @Injectable()
 export class Products {
@@ -10,5 +11,12 @@ export class Products {
 
   getById(id: string) {
     return this.products.find((p) => p.id === id);
+  }
+
+  create(productDto: CreateProductDto) {
+    this.products.push({
+      ...productDto,
+      id: Date.now().toString(),
+    });
   }
 }
