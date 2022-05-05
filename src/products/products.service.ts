@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 
 @Injectable()
-export class productsService {
+export class ProductsService {
   private products = [];
 
   getAll() {
