@@ -1,12 +1,6 @@
-import { identity } from 'rxjs';
-import {
-  Column,
-  Entity,
-  OneToMany,
-  OneToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Bus } from './bus.entity';
+import { Violation } from './violation.entity';
 
 @Entity()
 export class Driver {
@@ -18,4 +12,7 @@ export class Driver {
 
   @OneToMany(() => Bus, (bus) => bus.id)
   buses: Bus[];
+
+  @OneToMany(() => Violation, (violation) => violation.driver)
+  violations: Violation[];
 }

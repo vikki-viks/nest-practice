@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './products/entities/product.entity';
 import { Bus } from './buses/entities/bus.entity';
 import { Driver } from './buses/entities/driver.entity';
+import { Violation } from './buses/entities/violation.entity';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { Driver } from './buses/entities/driver.entity';
       username: 'postgres',
       password: 'postgres',
       database: 'bus',
-      entities: [Product, Bus, Driver],
+      entities: [Product, Bus, Driver, Violation],
       synchronize: true,
     }),
   ],

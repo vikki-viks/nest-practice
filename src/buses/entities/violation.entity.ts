@@ -2,22 +2,16 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Driver } from './driver.entity';
 
 @Entity()
-export class Bus {
+export class Violation {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  title: string;
+  text: string;
 
   @Column()
-  startTime: Date;
+  driverId: Date;
 
-  @Column()
-  endTime: Date;
-
-  @Column()
-  number: number;
-
-  @ManyToOne(() => Driver, (driver) => driver.buses)
+  @ManyToOne(() => Driver, (driver) => driver.violations)
   driver: Driver;
 }
