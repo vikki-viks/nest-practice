@@ -18,6 +18,10 @@ import { Violation } from './buses/entities/violation.entity';
       database: 'bus',
       entities: [Product, Bus, Driver, Violation],
       synchronize: true,
+      migrations: [
+        /*...*/
+      ],
+      migrationsTableName: 'migration',
     }),
   ],
   controllers: [],
